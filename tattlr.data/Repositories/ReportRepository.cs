@@ -19,18 +19,20 @@ namespace tattlr.data.Repositories
 
         #region IStore<Report> Members
 
-        public void Save(Report entity)
+        public Report Save(Report entity)
         {
             var record = new tattlr.data.EF.Report
             {
                 Id = entity.Id,
                 Description = entity.Description,
-                ImageUrl = entity.ImageUrl,
+                ImageUrl = entity.Image.Url,
                 Location = entity.Location,
                 Timestamp = entity.Timestamp
             };
             _db.Set<tattlr.data.EF.Report>().Add(record);
             _db.SaveChanges();
+            entity.Id = record.Id;
+            return entity;
         }
 
         public Report Get(int id)
@@ -42,7 +44,9 @@ namespace tattlr.data.Repositories
                 {
                     Id = record.Id,
                     Description = record.Description,
-                    ImageUrl = record.ImageUrl,
+                    Image = new ReportImage{
+                        Url = record.ImageUrl
+                    },
                     Location = record.Location,
                     Timestamp = record.Timestamp
                 };

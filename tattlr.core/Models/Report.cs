@@ -12,7 +12,7 @@ namespace tattlr.core.Models
         public int Id { get; set; }
         public string Description { get; set; }
         public GeoCoordinate Location { get; set; }
-        public string ImageUrl { get; set; }
+        public ReportImage Image {get;set;}
         public DateTime Timestamp { get; set; }
     }
 }

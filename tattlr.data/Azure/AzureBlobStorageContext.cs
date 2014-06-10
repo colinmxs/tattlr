@@ -3,9 +3,11 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using tattlr.core.Models;
 
 namespace tattlr.data.Azure
 {
@@ -34,11 +36,12 @@ namespace tattlr.data.Azure
             return _container.GetBlobReferenceFromServer(id) as CloudBlockBlob;
         }
 
-        public void Add(CloudBlockBlob entity)
+        public CloudBlockBlob Add(FileStream stream, string name)
         {
-            //TODO: Finish this
-            var blob = _container.GetBlockBlobReference(entity.Name);
-            //blob.UploadFromByteArray()
+            
+            var blob = _container.GetBlockBlobReference(name);
+            blob.UploadFromStream(stream);
+            return blob;
         }
 
         public void Update(CloudBlockBlob entity)

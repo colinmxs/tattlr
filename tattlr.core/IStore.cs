@@ -8,7 +8,7 @@ namespace tattlr.core
 {
     public interface IStore<TDomainObject>
     {
-        void Save(TDomainObject entity);
+        TDomainObject Save(TDomainObject entity);
         TDomainObject Get(int id);
         void Delete(int id);
     }
