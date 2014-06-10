@@ -1,0 +1,21 @@
+{
+    "environmentSettings": {
+        "webSite": {
+            "name": "tattlr",
+            "location": "West US"
+        },
+        "databases": [
+            {
+                "connectionStringName": "DefaultConnection",
+                "databaseName": "tattlr_db",
+                "serverName": "",
+                "user": "sa_tattlr",
+                "password": "",
+                "edition": "",
+                "size": "",
+                "collation": "",
+                "location": "West US"
+            }
+        ]
+    }
+}

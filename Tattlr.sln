@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tattlr.Tests", "Tattlr.Tests\Tattlr.Tests.csproj", "{B0239B39-006C-44FD-926D-AD4F9EF18074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tattlr.data", "tattlr.data\tattlr.data.csproj", "{520E1E08-4E26-456C-9BF7-E44AE4250C41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tattlr.core", "tattlr.core\tattlr.core.csproj", "{A6A4D671-3ECA-4763-BBA5-D681E780F1C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tattlr.services", "tattlr.services\tattlr.services.csproj", "{30A9192D-427A-4DBA-A39B-B322CF7796E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{3E7B179E-59D6-444C-91E2-C22DDDA43485}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{CC7EFED4-0481-46AC-8B20-8E5C24273E66}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\tattlrservices-WAWS-dev.json = PublishScripts\Configurations\tattlrservices-WAWS-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0239B39-006C-44FD-926D-AD4F9EF18074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0239B39-006C-44FD-926D-AD4F9EF18074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0239B39-006C-44FD-926D-AD4F9EF18074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0239B39-006C-44FD-926D-AD4F9EF18074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{520E1E08-4E26-456C-9BF7-E44AE4250C41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{520E1E08-4E26-456C-9BF7-E44AE4250C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{520E1E08-4E26-456C-9BF7-E44AE4250C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{520E1E08-4E26-456C-9BF7-E44AE4250C41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A4D671-3ECA-4763-BBA5-D681E780F1C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A4D671-3ECA-4763-BBA5-D681E780F1C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A4D671-3ECA-4763-BBA5-D681E780F1C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A4D671-3ECA-4763-BBA5-D681E780F1C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30A9192D-427A-4DBA-A39B-B322CF7796E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30A9192D-427A-4DBA-A39B-B322CF7796E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30A9192D-427A-4DBA-A39B-B322CF7796E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30A9192D-427A-4DBA-A39B-B322CF7796E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CC7EFED4-0481-46AC-8B20-8E5C24273E66} = {3E7B179E-59D6-444C-91E2-C22DDDA43485}
+	EndGlobalSection
+EndGlobal
