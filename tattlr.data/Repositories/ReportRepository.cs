@@ -65,6 +65,12 @@ namespace tattlr.data.Repositories
             }
         }
 
+        public IEnumerable<Report> GetAll()
+        {
+            var records = _db.Set<Report>().ToList();
+            return records;
+        }
+
         #endregion
     }
 }

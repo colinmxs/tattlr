@@ -9,6 +9,9 @@ namespace tattlr.core.Services
 {
     public interface IReportService
     {
-        void SaveReport(Report report, ReportImage image);
+        IEnumerable<Report> GetReports();
+        Report GetReport(int id);
+        Report SaveReport(Report report);
+        void DeleteReport(int id);
     }
 }

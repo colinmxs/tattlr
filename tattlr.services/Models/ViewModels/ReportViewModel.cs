@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Device.Location;
+using tattlr.core.Models;
 
 namespace tattlr.services.Models.ViewModels
 {
@@ -14,6 +16,17 @@ namespace tattlr.services.Models.ViewModels
     public class ReportSubmissionViewModel : ReportViewModel
     {
         public HttpPostedFileBase File { get; set; }
+
+        public static Report MapToReport(ReportSubmissionViewModel entity) 
+        {
+            var report = new Report
+            {
+                Description = entity.Description,
+                Location = entity.Location,
+                Image = new ReportImage(entity.File.InputStream)                
+            };
+            return report;
+        }
     }
 
     public class SubmittedReportViewModel : ReportViewModel
@@ -21,5 +34,20 @@ namespace tattlr.services.Models.ViewModels
         public int Id { get; set; }
         public string ImageUrl { get; set; }
         public DateTime TimeStamp { get; set; }
+
+        public static SubmittedReportViewModel MapFromReport(Report entity)
+        {
+            var reportViewModel = new SubmittedReportViewModel
+            {
+                Id = entity.Id,
+                ImageUrl = entity.Image.Url,
+                Description = entity.Description,
+                Location = entity.Location,
+                TimeStamp = entity.Timestamp
+            };
+            return reportViewModel;
+        }
     }
 }
+
+    

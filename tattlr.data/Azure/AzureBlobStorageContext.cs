@@ -36,7 +36,7 @@ namespace tattlr.data.Azure
             return _container.GetBlobReferenceFromServer(id) as CloudBlockBlob;
         }
 
-        public CloudBlockBlob Add(FileStream stream, string name)
+        public CloudBlockBlob Add(Stream stream, string name)
         {
             
             var blob = _container.GetBlockBlobReference(name);

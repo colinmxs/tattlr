@@ -10,6 +10,7 @@ namespace tattlr.core
     {
         TDomainObject Save(TDomainObject entity);
         TDomainObject Get(int id);
+        IEnumerable<TDomainObject> GetAll();
         void Delete(int id);
     }
 }
