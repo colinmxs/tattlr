@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
-using tattlr.services.Models.ViewModels;
 using tattlr.core.Services;
+using tattlr.services.Models.ViewModels;
 
 namespace tattlr.services.Controllers
 {
+    [Authorize]
     public class ReportController : ApiController
     {
         private readonly IReportService _reportService;

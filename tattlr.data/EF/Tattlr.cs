@@ -4,7 +4,6 @@ namespace tattlr.data.EF
     using System.ComponentModel.DataAnnotations;
     using System.Data.Entity;
     using System.Device.Location;
-    using System.Linq;
 
     public class Tattlr : DbContext
     {

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using tattlr.services.Providers;
+using System;
 using tattlr.services.Models;
+using tattlr.services.Providers;
 
 namespace tattlr.services
 {
@@ -39,7 +35,7 @@ namespace tattlr.services
                 Provider = new ApplicationOAuthProvider(PublicClientId),
                 AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
-                AllowInsecureHttp = true
+                AllowInsecureHttp = true                
             };
 
             // Enable the application to use bearer tokens to authenticate users
@@ -50,13 +46,13 @@ namespace tattlr.services
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //    consumerKey: "",
-            //    consumerSecret: "");
+            app.UseTwitterAuthentication(
+                consumerKey: "LrnQNhVObu18nkoD0evxfIQFJ",
+                consumerSecret: "K8vsoedqciqexNfOmwVKr7E8pgfCFW6oiiGyaPIj7DrU5XFrsn");
 
-            //app.UseFacebookAuthentication(
-            //    appId: "",
-            //    appSecret: "");
+            app.UseFacebookAuthentication(
+                appId: "1395563310733499",
+                appSecret: "e752d051df5e8ed60b6a922b5b555528");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
