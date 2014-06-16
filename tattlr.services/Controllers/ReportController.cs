@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using tattlr.core.Services;
 using tattlr.services.Models.ViewModels;
 
 namespace tattlr.services.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ReportController : ApiController
     {
         private readonly IReportService _reportService;
@@ -13,6 +15,7 @@ namespace tattlr.services.Controllers
         {
             _reportService = reportService;
         }
+
         // GET: api/Report
         public IEnumerable<SubmittedReportViewModel> Get()
         {
@@ -32,13 +35,26 @@ namespace tattlr.services.Controllers
             return SubmittedReportViewModel.MapFromReport(report);
         }
 
-        // POST: api/Report
-        public void Post([FromBody]ReportSubmissionViewModel entity)
+        //// POST: api/Report
+        public HttpResponseMessage Post(ReportSubmissionViewModel entity)
         {
-            var report = ReportSubmissionViewModel.MapToReport(entity);
-            _reportService.SaveReport(report);
-        }
+            if (!Request.Content.IsMimeMultipartContent())
+            {
+                throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
+            }
 
+            try
+            {
+                var report = ReportSubmissionViewModel.MapToReport(entity);
+                _reportService.SaveReport(report);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (System.Exception e)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+            }
+        }
+        
         // PUT: api/Report/5
         public void Put(int id, [FromBody]ReportSubmissionViewModel entity)
         {

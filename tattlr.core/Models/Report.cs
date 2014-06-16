@@ -7,7 +7,8 @@ namespace tattlr.core.Models
     {
         public int Id { get; set; }
         public string Description { get; set; }
-        public GeoCoordinate Location { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         public ReportImage Image {get;set;}
         public DateTime Timestamp { get; set; }
     }

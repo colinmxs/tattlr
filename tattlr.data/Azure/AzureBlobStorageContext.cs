@@ -13,7 +13,7 @@ namespace tattlr.data.Azure
         private readonly CloudBlobClient _client;
         public readonly CloudBlobContainer _container;
 
-        public AzureBlobStorageContext(string container)
+        public AzureBlobStorageContext(string container = "report-images")
         {
             _account = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
             _client = _account.CreateCloudBlobClient();
@@ -32,11 +32,14 @@ namespace tattlr.data.Azure
             return _container.GetBlobReferenceFromServer(id) as CloudBlockBlob;
         }
 
-        public CloudBlockBlob Add(Stream stream, string name)
+        public CloudBlockBlob Add(byte[] byteArray, string name)
         {
             
             var blob = _container.GetBlockBlobReference(name);
-            blob.UploadFromStream(stream);
+            using (var stream = new MemoryStream(byteArray))
+            {
+                blob.UploadFromStream(stream);
+            }
             return blob;
         }
 

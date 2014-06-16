@@ -2,11 +2,11 @@
 
 namespace tattlr.core
 {
-    public interface IStore<TDomainObject>
+    public interface IStore<TDomainObject, TId>
     {
         TDomainObject Save(TDomainObject entity);
-        TDomainObject Get(int id);
+        TDomainObject Get(TId id);
         IEnumerable<TDomainObject> GetAll();
-        void Delete(int id);
+        void Delete(TId id);
     }
 }

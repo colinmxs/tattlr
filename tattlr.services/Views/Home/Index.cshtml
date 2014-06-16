@@ -12,7 +12,13 @@
 </head>
 <body>
     <div>
-
+        <form name="test" action="~/api/report/reportimage" method="post" enctype="multipart/form-data">
+            Description: <input type="text" name="description" />
+            Latitude: <input type="text" name="latitude" />
+            Longitude: <input type="text" name="longitude" />
+            File: <input type="file" name="File" />
+            <input type="submit" />
+        </form>
     </div>
 </body>
 </html>

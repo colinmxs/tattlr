@@ -3,28 +3,30 @@ using System.Data.Entity;
 using System.Linq;
 using tattlr.core;
 using tattlr.core.Models;
+using tattlr.data.EF;
 
 namespace tattlr.data.Repositories
 {
-    public class ReportRepository : IStore<Report>
+    public class ReportRepository : IStore<tattlr.core.Models.Report, int>
     {
         private readonly DbContext _db;
-        public ReportRepository(DbContext db)
+        public ReportRepository()
         {
-            _db = db;
+            _db = ContextLoader.LoadContext();
         }
 
         #region IStore<Report> Members
 
-        public Report Save(Report entity)
+        public tattlr.core.Models.Report Save(tattlr.core.Models.Report entity)
         {
             var record = new tattlr.data.EF.Report
             {
                 Id = entity.Id,
                 Description = entity.Description,
                 ImageUrl = entity.Image.Url,
-                Location = entity.Location,
-                Timestamp = entity.Timestamp
+                Timestamp = entity.Timestamp,
+                Latitude = entity.Latitude,
+                Longitude = entity.Longitude                
             };
             _db.Set<tattlr.data.EF.Report>().Add(record);
             _db.SaveChanges();
@@ -32,19 +34,18 @@ namespace tattlr.data.Repositories
             return entity;
         }
 
-        public Report Get(int id)
+        public tattlr.core.Models.Report Get(int id)
         {
             var record = _db.Set<tattlr.data.EF.Report>().Find(id);
             if (record != null)
             {
-                var entity = new Report
+                var entity = new tattlr.core.Models.Report
                 {
                     Id = record.Id,
                     Description = record.Description,
                     Image = new ReportImage{
-                        Url = record.ImageUrl
+                        Url = record.ImageUrl,
                     },
-                    Location = record.Location,
                     Timestamp = record.Timestamp
                 };
                 return entity;
@@ -62,10 +63,31 @@ namespace tattlr.data.Repositories
             }
         }
 
-        public IEnumerable<Report> GetAll()
+        public IEnumerable<tattlr.core.Models.Report> GetAll()
         {
-            var records = _db.Set<Report>().ToList();
-            return records;
+            var records = _db.Set<tattlr.data.EF.Report>().ToList();
+            if (records.Any())
+            {
+                var reports = new List<tattlr.core.Models.Report>();
+                foreach (var record in records)
+                {
+                    var entity = new tattlr.core.Models.Report
+                    {
+                        Id = record.Id,
+                        Description = record.Description,
+                        Image = new ReportImage
+                        {
+                            Url = record.ImageUrl
+                        },
+                        Latitude = record.Latitude,
+                        Longitude = record.Longitude,
+                        Timestamp = record.Timestamp
+                    };
+                    reports.Add(entity);
+                }
+                return reports;
+            }
+            return null;
         }
 
         #endregion

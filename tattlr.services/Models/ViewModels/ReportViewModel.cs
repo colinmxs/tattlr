@@ -1,6 +1,5 @@
-﻿using System;
-using System.Device.Location;
-using System.Web;
+﻿using MultipartDataMediaFormatter.Infrastructure;
+using System;
 using tattlr.core.Models;
 
 namespace tattlr.services.Models.ViewModels
@@ -8,20 +7,23 @@ namespace tattlr.services.Models.ViewModels
     public class ReportViewModel
     {
         public string Description { get; set; }
-        public GeoCoordinate Location { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
+
     }
 
     public class ReportSubmissionViewModel : ReportViewModel
     {
-        public HttpPostedFileBase File { get; set; }
+        public HttpFile File { get; set; }
 
         public static Report MapToReport(ReportSubmissionViewModel entity) 
         {
             var report = new Report
             {
                 Description = entity.Description,
-                Location = entity.Location,
-                Image = new ReportImage(entity.File.InputStream)                
+                Latitude = Convert.ToDouble(entity.Latitude),
+                Longitude = Convert.ToDouble(entity.Longitude),
+                Image = new ReportImage(entity.File.Buffer)                
             };
             return report;
         }
@@ -40,7 +42,8 @@ namespace tattlr.services.Models.ViewModels
                 Id = entity.Id,
                 ImageUrl = entity.Image.Url,
                 Description = entity.Description,
-                Location = entity.Location,
+                Latitude = entity.Latitude.ToString(),
+                Longitude = entity.Longitude.ToString(),
                 TimeStamp = entity.Timestamp
             };
             return reportViewModel;
