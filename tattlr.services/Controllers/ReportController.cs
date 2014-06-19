@@ -36,23 +36,15 @@ namespace tattlr.services.Controllers
         }
 
         //// POST: api/Report
-        public HttpResponseMessage Post(ReportSubmissionViewModel entity)
+        public SubmittedReportViewModel Post(ReportSubmissionViewModel entity)
         {
             if (!Request.Content.IsMimeMultipartContent())
             {
                 throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
             }
-
-            try
-            {
-                var report = ReportSubmissionViewModel.MapToReport(entity);
-                _reportService.SaveReport(report);
-                return Request.CreateResponse(HttpStatusCode.OK);
-            }
-            catch (System.Exception e)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
-            }
+            
+            var report = ReportSubmissionViewModel.MapToReport(entity);
+            return SubmittedReportViewModel.MapFromReport(_reportService.SaveReport(report));
         }
         
         // PUT: api/Report/5

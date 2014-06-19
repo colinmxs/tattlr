@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IStore.cs" />
+    <Compile Include="Models\ImageType.cs" />
+    <Compile Include="Models\ITrackableEntity.cs" />
     <Compile Include="Models\ReportImage.cs" />
     <Compile Include="Models\Report.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

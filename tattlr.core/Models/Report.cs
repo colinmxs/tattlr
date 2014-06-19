@@ -3,7 +3,7 @@ using System.Device.Location;
 
 namespace tattlr.core.Models
 {
-    public class Report
+    public class Report : ITrackableEntity<int>
     {
         public int Id { get; set; }
         public string Description { get; set; }

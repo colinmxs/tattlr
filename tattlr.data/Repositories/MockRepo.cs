@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tattlr.core;
-using tattlr.data.Models;
+using tattlr.core.Models;
 
 namespace tattlr.data.Repositories
 {
@@ -19,7 +19,7 @@ namespace tattlr.data.Repositories
         }
         public MockRepo()
         {
-
+            Entities = new Dictionary<TId, TDomain>();
         }
         public TDomain Save(TDomain entity)
         {

@@ -83,8 +83,11 @@
     <Compile Include="Migrations\201406160228589_Colin1.Designer.cs">
       <DependentUpon>201406160228589_Colin1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201406160412561_Colin2.cs" />
+    <Compile Include="Migrations\201406160412561_Colin2.Designer.cs">
+      <DependentUpon>201406160412561_Colin2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\ITrackableEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AzureImageRepository.cs" />
     <Compile Include="Repositories\MockRepo.cs" />
@@ -109,6 +112,12 @@
     <EmbeddedResource Include="Migrations\201406160228589_Colin1.resx">
       <DependentUpon>201406160228589_Colin1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406160412561_Colin2.resx">
+      <DependentUpon>201406160412561_Colin2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

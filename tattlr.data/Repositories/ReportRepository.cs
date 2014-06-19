@@ -21,12 +21,13 @@ namespace tattlr.data.Repositories
         {
             var record = new tattlr.data.EF.Report
             {
-                Id = entity.Id,
                 Description = entity.Description,
-                ImageUrl = entity.Image.Url,
                 Timestamp = entity.Timestamp,
                 Latitude = entity.Latitude,
-                Longitude = entity.Longitude                
+                Longitude = entity.Longitude,
+                Image = new Image {
+                    Uri = entity.Image.Uri
+                }
             };
             _db.Set<tattlr.data.EF.Report>().Add(record);
             _db.SaveChanges();
@@ -42,9 +43,14 @@ namespace tattlr.data.Repositories
                 var entity = new tattlr.core.Models.Report
                 {
                     Id = record.Id,
+                    Latitude = record.Latitude,
+                    Longitude = record.Longitude,
                     Description = record.Description,
-                    Image = new ReportImage{
-                        Url = record.ImageUrl,
+                    //TODO: hard-coded PNG, fix this
+                    Image = new ReportImage(ImageType.PNG)
+                    {
+                        Uri = record.Image.Uri,
+                        Id = record.Image.Id
                     },
                     Timestamp = record.Timestamp
                 };
@@ -75,9 +81,12 @@ namespace tattlr.data.Repositories
                     {
                         Id = record.Id,
                         Description = record.Description,
-                        Image = new ReportImage
+                        //TODO: fix this hard-coded png
+                        Image = new ReportImage(ImageType.PNG)
                         {
-                            Url = record.ImageUrl
+                            Id = record.Image.Id,
+                            Uri = record.Image.Uri,
+                            
                         },
                         Latitude = record.Latitude,
                         Longitude = record.Longitude,

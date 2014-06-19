@@ -23,7 +23,8 @@ namespace tattlr.services.Models.ViewModels
                 Description = entity.Description,
                 Latitude = Convert.ToDouble(entity.Latitude),
                 Longitude = Convert.ToDouble(entity.Longitude),
-                Image = new ReportImage(entity.File.Buffer)                
+                //TODO: fix this. PNG is hardcoded
+                Image = new ReportImage(entity.File.Buffer, ImageType.PNG)                
             };
             return report;
         }
@@ -40,7 +41,7 @@ namespace tattlr.services.Models.ViewModels
             var reportViewModel = new SubmittedReportViewModel
             {
                 Id = entity.Id,
-                ImageUrl = entity.Image.Url,
+                ImageUrl = entity.Image.Uri,
                 Description = entity.Description,
                 Latitude = entity.Latitude.ToString(),
                 Longitude = entity.Longitude.ToString(),

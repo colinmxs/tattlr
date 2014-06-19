@@ -9,5 +9,10 @@ namespace tattlr.services.Controllers
         {
             return View();
         }
+        [Authorize]
+        public string Test()
+        {
+            return "worked";
+        }
     }
 }

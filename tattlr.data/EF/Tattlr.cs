@@ -4,7 +4,7 @@ namespace tattlr.data.EF
     using System.ComponentModel.DataAnnotations;
     using System.Data.Entity;
     using System.Device.Location;
-    using tattlr.data.Models;
+    using tattlr.core.Models;
 
     public class Tattlr : DbContext
     {
@@ -20,7 +20,6 @@ namespace tattlr.data.EF
         [Key]
         public int Id { get; set; }
         public string Description { get; set; }
-        public string ImageUrl { get; set; }
         public DateTime Timestamp { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
@@ -32,8 +31,6 @@ namespace tattlr.data.EF
     {
         [Key]
         public int Id { get; set; }
-        public string AzureId { get; set; }
         public string Uri { get; set; }
-       
     }
 }
