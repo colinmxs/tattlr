@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using tattlr.core.Services;
 using tattlr.services.Models.ViewModels;
@@ -36,7 +37,7 @@ namespace tattlr.services.Controllers
         }
 
         //// POST: api/Report
-        public SubmittedReportViewModel Post(ReportSubmissionViewModel entity)
+        public async Task<SubmittedReportViewModel> Post(ReportSubmissionViewModel entity)
         {
             if (!Request.Content.IsMimeMultipartContent())
             {
@@ -46,7 +47,7 @@ namespace tattlr.services.Controllers
             var report = ReportSubmissionViewModel.MapToReport(entity);
             return SubmittedReportViewModel.MapFromReport(_reportService.SaveReport(report));
         }
-        
+
         // PUT: api/Report/5
         public void Put(int id, [FromBody]ReportSubmissionViewModel entity)
         {

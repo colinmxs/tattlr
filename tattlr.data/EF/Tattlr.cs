@@ -2,6 +2,7 @@ namespace tattlr.data.EF
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity;
     using System.Device.Location;
     using tattlr.core.Models;
@@ -23,9 +24,9 @@ namespace tattlr.data.EF
         public DateTime Timestamp { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        [Association(name:"FK_Image_Report", thisKey: "ImageId", otherKey: "Id", IsForeignKey=true)]
-        public Image Image { get; set; }
         public int ImageId { get; set; }
+        public virtual Image Image { get; set; }
+        
     }
     public class Image : ITrackableEntity<int>
     {
@@ -33,4 +34,5 @@ namespace tattlr.data.EF
         public int Id { get; set; }
         public string Uri { get; set; }
     }
+    
 }

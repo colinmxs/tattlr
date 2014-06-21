@@ -72,6 +72,7 @@ namespace tattlr.data.Repositories
         public IEnumerable<tattlr.core.Models.Report> GetAll()
         {
             var records = _db.Set<tattlr.data.EF.Report>().ToList();
+            var images = _db.Set<tattlr.data.EF.Image>().ToList();
             if (records.Any())
             {
                 var reports = new List<tattlr.core.Models.Report>();

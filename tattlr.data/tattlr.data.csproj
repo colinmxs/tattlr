@@ -87,6 +87,10 @@
     <Compile Include="Migrations\201406160412561_Colin2.Designer.cs">
       <DependentUpon>201406160412561_Colin2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201406192348113_kk.cs" />
+    <Compile Include="Migrations\201406192348113_kk.Designer.cs">
+      <DependentUpon>201406192348113_kk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AzureImageRepository.cs" />
@@ -114,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201406160412561_Colin2.resx">
       <DependentUpon>201406160412561_Colin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406192348113_kk.resx">
+      <DependentUpon>201406192348113_kk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
