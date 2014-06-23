@@ -14,17 +14,18 @@ namespace tattlr.services.Models.ViewModels
 
     public class ReportSubmissionViewModel : ReportViewModel
     {
-        public HttpFile File { get; set; }
+        public string File { get; set; }
 
         public static Report MapToReport(ReportSubmissionViewModel entity) 
         {
+            var byteArray = Convert.FromBase64String(entity.File);
             var report = new Report
             {
                 Description = entity.Description,
                 Latitude = Convert.ToDouble(entity.Latitude),
                 Longitude = Convert.ToDouble(entity.Longitude),
                 //TODO: fix this. PNG is hardcoded
-                Image = new ReportImage(entity.File.Buffer, ImageType.PNG)                
+                Image = new ReportImage(byteArray, ImageType.PNG)                
             };
             return report;
         }
