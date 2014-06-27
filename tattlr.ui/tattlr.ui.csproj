@@ -32,6 +32,25 @@
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="dist\.htaccess" />
+    <None Include="dist\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="dist\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="dist\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dist\404.html" />
+    <Content Include="dist\favicon.ico" />
+    <Content Include="dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="dist\images\47b431ed.yeoman.png" />
+    <Content Include="dist\index.html" />
+    <Content Include="dist\robots.txt" />
+    <Content Include="dist\scripts\6662200f.vendor.js" />
+    <Content Include="dist\scripts\e1ff1bc5.scripts.js" />
+    <Content Include="dist\styles\5a3706b1.main.css" />
+    <Content Include="dist\styles\cd367326.vendor.css" />
+    <Content Include="dist\views\main.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
