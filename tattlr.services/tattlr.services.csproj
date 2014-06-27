@@ -211,6 +211,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.html" />
+    <Content Include="dist\404.html" />
+    <Content Include="dist\favicon.ico" />
+    <Content Include="dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="dist\images\47b431ed.yeoman.png" />
+    <Content Include="dist\index.html" />
+    <Content Include="dist\robots.txt" />
+    <Content Include="dist\scripts\2c4917fd.scripts.js" />
+    <Content Include="dist\scripts\6662200f.vendor.js" />
+    <Content Include="dist\styles\5a3706b1.main.css" />
+    <Content Include="dist\styles\cd367326.vendor.css" />
+    <Content Include="dist\views\about.html" />
+    <Content Include="dist\views\main.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -219,6 +231,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="dist\.htaccess" />
+    <Content Include="dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="dist\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Properties\PublishProfiles\tattlr.pubxml" />
     <Content Include="images\47b431ed.yeoman.png" />
     <Content Include="index.html" />
