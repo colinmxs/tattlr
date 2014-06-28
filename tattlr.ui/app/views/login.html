@@ -1,0 +1,12 @@
+<div class="modal-header">
+    <h3 class="modal-title">Login</h3>
+</div>
+<div class="modal-body">
+  <div ng-repeat="provider in authProviders">
+    <a ng-href="{{'http://tattlr.azurewebsites.net'+provider.Url}}" class="btn btn-lg btn-primary">{{provider.Name}}</a>
+  </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
