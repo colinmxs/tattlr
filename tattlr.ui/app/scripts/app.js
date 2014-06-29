@@ -16,6 +16,14 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
+      })
+      .when('/signin-facebook', {
+        templateUrl: 'views/signin.html',
+        controller: 'SigninCtrl'
+      });
+      .when('/signin-twitter', {
+        templateUrl: 'views/signin.html',
+        controller: 'SigninCtrl'
       });
       // .otherwise({
       //   redirectTo: '/'
