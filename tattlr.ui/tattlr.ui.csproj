@@ -47,7 +47,9 @@
     <Content Include="dist\robots.txt" />
     <Content Include="dist\scripts\2c4917fd.scripts.js" />
     <Content Include="dist\scripts\6662200f.vendor.js" />
+    <Content Include="dist\scripts\scripts.js" />
     <Content Include="dist\scripts\92ae4bce.vendor.js" />
+    <Content Include="dist\scripts\d2872031.scripts.js" />
     <Content Include="dist\scripts\e1ff1bc5.scripts.js" />
     <Content Include="dist\styles\5a3706b1.main.css" />
     <Content Include="dist\styles\cd367326.vendor.css" />
