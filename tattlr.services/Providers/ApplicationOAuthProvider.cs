@@ -72,7 +72,7 @@ namespace tattlr.services.Providers
         {
             if (context.ClientId == _publicClientId)
             {
-                Uri expectedRootUri = new Uri(context.Request.Uri, "/");
+                Uri expectedRootUri = new Uri(context.Request.Uri, "/signin/");
 
                 if (expectedRootUri.AbsoluteUri == context.RedirectUri)
                 {
