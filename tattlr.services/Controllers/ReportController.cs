@@ -8,7 +8,7 @@ using tattlr.services.Models.ViewModels;
 
 namespace tattlr.services.Controllers
 {
-    [Authorize]
+   // [Authorize]
     public class ReportController : ApiController
     {
         private readonly IReportService _reportService;
