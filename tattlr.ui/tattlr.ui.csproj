@@ -47,11 +47,16 @@
     <Content Include="dist\robots.txt" />
     <Content Include="dist\scripts\2c4917fd.scripts.js" />
     <Content Include="dist\scripts\6662200f.vendor.js" />
+    <Content Include="dist\scripts\scripts.js" />
+    <Content Include="dist\scripts\92ae4bce.vendor.js" />
+    <Content Include="dist\scripts\d2872031.scripts.js" />
     <Content Include="dist\scripts\e1ff1bc5.scripts.js" />
     <Content Include="dist\styles\5a3706b1.main.css" />
     <Content Include="dist\styles\cd367326.vendor.css" />
     <Content Include="dist\views\about.html" />
+    <Content Include="dist\views\login.html" />
     <Content Include="dist\views\main.html" />
+    <Content Include="dist\views\signin.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
