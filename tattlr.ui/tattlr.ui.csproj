@@ -45,6 +45,7 @@
     <Content Include="dist\images\47b431ed.yeoman.png" />
     <Content Include="dist\index.html" />
     <Content Include="dist\robots.txt" />
+    <Content Include="dist\scripts\1f8013b2.scripts.js" />
     <Content Include="dist\scripts\2c4917fd.scripts.js" />
     <Content Include="dist\scripts\6662200f.vendor.js" />
     <Content Include="dist\scripts\scripts.js" />
