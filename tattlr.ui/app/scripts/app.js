@@ -17,11 +17,7 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/signin-facebook', {
-        templateUrl: 'views/signin.html',
-        controller: 'SigninCtrl'
-      })
-      .when('/signin-twitter', {
+      .when('/signin', {
         templateUrl: 'views/signin.html',
         controller: 'SigninCtrl'
       });
