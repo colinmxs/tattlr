@@ -3,7 +3,7 @@
 </div>
 <div class="modal-body">
   <div ng-repeat="provider in authProviders">
-    <a ng-href="{{'http://tattlr.azurewebsites.net'+provider.Url}}" class="btn btn-lg btn-primary">{{provider.Name}}</a>
+    <a ng-click="goTo('http://tattlr.azurewebsites.net'+provider.Url)" class="btn btn-lg btn-primary">{{provider.Name}}</a>
   </div>
 </div>
 <div class="modal-footer">
