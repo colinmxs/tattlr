@@ -4,7 +4,8 @@ angular
   .module('tattlrApp', [
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -15,10 +16,10 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
+      // .otherwise({
+      //   redirectTo: '/'
+      // });
 
     $locationProvider.html5Mode(true);
   });
