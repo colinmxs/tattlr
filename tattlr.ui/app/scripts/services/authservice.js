@@ -38,7 +38,7 @@ angular.module('tattlrApp')
 
     return {
       getAuthProviders: function() {
-        return $http.get(baseUrl+'/api/account/ExternalLogins?returnUrl=/');
+        return $http.get(baseUrl+'/api/account/ExternalLogins?returnUrl=/signin');
       },
       getUserInfo: function () {
         return $http.get(baseUrl+'/api/account/userinfo');
