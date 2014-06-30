@@ -223,9 +223,11 @@
     <Content Include="scripts\1f8013b2.scripts.js" />
     <Content Include="scripts\2c4917fd.scripts.js" />
     <Content Include="scripts\6662200f.vendor.js" />
+    <Content Include="scripts\7e1faab4.scripts.js" />
     <Content Include="scripts\92ae4bce.vendor.js" />
     <Content Include="scripts\85673692.scripts.js" />
     <Content Include="scripts\e1ff1bc5.scripts.js" />
+    <Content Include="scripts\scripts.js" />
     <Content Include="styles\5a3706b1.main.css" />
     <Content Include="styles\cd367326.vendor.css" />
     <Content Include="views\about.html" />
