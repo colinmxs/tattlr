@@ -9,9 +9,9 @@ namespace tattlr.services.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        //public ActionResult Index()
-        //{
-        //    return Redirect("~/index.html");
-        //}
+        public string Index()
+        {
+            return "KLDJLKDJ";
+        }
     }
 }
