@@ -48,6 +48,7 @@
     <Content Include="dist\scripts\1f8013b2.scripts.js" />
     <Content Include="dist\scripts\2c4917fd.scripts.js" />
     <Content Include="dist\scripts\6662200f.vendor.js" />
+    <Content Include="dist\scripts\7e1faab4.scripts.js" />
     <Content Include="dist\scripts\scripts.js" />
     <Content Include="dist\scripts\92ae4bce.vendor.js" />
     <Content Include="dist\scripts\d2872031.scripts.js" />
