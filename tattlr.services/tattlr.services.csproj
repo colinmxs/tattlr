@@ -215,10 +215,12 @@
     <None Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="fonts\glyphicons-halflings-regular.ttf" />
     <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\tattlr %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\tattlr.pubxml" />
     <Content Include="images\47b431ed.yeoman.png" />
     <Content Include="index.html" />
     <Content Include="robots.txt" />
+    <Content Include="scripts\1f8013b2.scripts.js" />
     <Content Include="scripts\2c4917fd.scripts.js" />
     <Content Include="scripts\6662200f.vendor.js" />
     <Content Include="scripts\92ae4bce.vendor.js" />
