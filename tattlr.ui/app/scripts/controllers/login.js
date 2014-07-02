@@ -14,7 +14,7 @@ angular.module('tattlrApp')
     };
 
     $scope.ok = function () {
-      $modalInstance.close($scope.selected.item);
+      
     };
 
     $scope.cancel = function () {
