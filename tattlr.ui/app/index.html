@@ -26,7 +26,8 @@
       <ul ng-controller="MenuCtrl" class="nav nav-pills pull-right">
         <li class="active"><a ng-href="#">Home</a></li>
         <li><a ng-href="/about">About</a></li>
-        <li><a ng-href="#" ng-click="openLoginModal()">Login</a></li>
+        <li ng-if="!loggedIn"><a ng-href="#" ng-click="openLoginModal()">Login</a></li>
+        <li ng-if="loggedIn">{{user.email}}</li>
       </ul>
       <h3 class="text-muted">tattlr ui</h3>
     </div>
@@ -69,6 +70,8 @@
         <script src="scripts/services/authservice.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/signin.js"></script>
+        <script src="scripts/services/violationdetail.js"></script>
+        <script src="scripts/services/violation.js"></script>
         <!-- endbuild -->
 </body>
 </html>
