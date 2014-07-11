@@ -5,7 +5,9 @@ angular.module('tattlrApp')
     console.log($location.url());
     console.log($location.path());
 
-    if($location.url().indexOf('access_token=') !== -1) {
+    var url = $location.url();
+
+    if(url.indexOf('access_token=') !== -1) {
         //var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
         //alert (hash);
 
