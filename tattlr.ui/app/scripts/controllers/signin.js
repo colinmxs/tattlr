@@ -1,9 +1,7 @@
 'use strict';
 
 angular.module('tattlrApp')
-  .controller('SigninCtrl', function ($scope, $location) {
-    console.log($location.url());
-    console.log($location.path());
+  .controller('SigninCtrl', function ($scope, $location, AuthService) {
 
     var url = $location.url();
 
@@ -11,14 +9,34 @@ angular.module('tattlrApp')
         //var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
         //alert (hash);
 
-        var urlSplit = url.split('=');
-        var tokenSplit = urlSplit[1].split('&');
+      var urlSplit = url.split('=');
+      var tokenSplit = urlSplit[1].split('&');
 
-        var token = tokenSplit[0];
+      var token = tokenSplit[0];
 
-        localStorage.setItem('tattlrToken', token);
+      localStorage.setItem('tattlrToken', token);
 
-        console.log(token);
+      console.log(token);
+
+      AuthService.getUserInfo(token).then(function(result) {
+
+        if(result.data.hasRegistered) {
+
+          // get user data and s
+
+        } else {
+          // User needs to register in our DB
+          AuthService.registerExternal(token, result.data.Email).then(function(result) {
+
+            console.log(result);
+
+
+          });
+
+        }
+
+      });
+
 
         // var violationForm = Ext.create('Tattlr.view.ViolationForm');
         //

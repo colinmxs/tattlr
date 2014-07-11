@@ -40,11 +40,11 @@ angular.module('tattlrApp')
       getAuthProviders: function() {
         return $http.get(baseUrl+'/api/account/ExternalLogins?returnUrl=/signin');
       },
-      getUserInfo: function () {
-        return $http.get(baseUrl+'/api/account/userinfo');
+      getUserInfo: function (token) {
+        return $http.get(baseUrl+'/api/account/userinfo', {headers: {'Authorization': 'Bearer '+token}});
       },
-      registerExternal: function(values) {
-        return $http.post(baseUrl+'/api/Account/RegisterExternal', values);
+      registerExternal: function(token, values) {
+        return $http.post(baseUrl+'/api/Account/RegisterExternal', values, {headers: {'Authorization': 'Bearer '+token, 'Content-Type': 'application/json'}});
       },
       getUser: function() {
         return user;
