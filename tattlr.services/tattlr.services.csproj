@@ -191,7 +191,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -212,22 +211,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="ClassDiagram1.cd" />
-    <None Include=".htaccess" />
-    <None Include="fonts\glyphicons-halflings-regular.eot" />
-    <None Include="fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="fonts\glyphicons-halflings-regular.woff" />
-    <None Include="Properties\PublishProfiles\tattlr %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\tattlr.pubxml" />
     <Content Include="images\47b431ed.yeoman.png" />
     <Content Include="index.html" />
     <Content Include="robots.txt" />
-    <Content Include="scripts\1f8013b2.scripts.js" />
-    <Content Include="scripts\2c4917fd.scripts.js" />
-    <Content Include="scripts\6662200f.vendor.js" />
     <Content Include="scripts\7e1faab4.scripts.js" />
     <Content Include="scripts\92ae4bce.vendor.js" />
-    <Content Include="scripts\85673692.scripts.js" />
-    <Content Include="scripts\e1ff1bc5.scripts.js" />
     <Content Include="scripts\scripts.js" />
     <Content Include="styles\5a3706b1.main.css" />
     <Content Include="styles\cd367326.vendor.css" />
@@ -245,11 +233,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include=".htaccess" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Project_Readme.html" />
+    <None Include="Properties\PublishProfiles\tattlr.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -10,11 +10,13 @@ namespace tattlr.services
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             //routes.IgnoreRoute("");
 
-            routes.MapRoute(
-                "Default",                                              // Route name
-                "{controller}/{action}/{id}",                           // URL with parameters
-                new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
-            );
+            //routes.MapRoute(
+            //    "Default",                                              // Route name
+            //    "{controller}/{action}/{id}",                           // URL with parameters
+            //    new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
+            //);
+
+            routes.MapPageRoute("Default", "{*anything}", "~/index.html");
         }
     }
 }
