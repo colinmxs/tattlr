@@ -31,7 +31,7 @@ angular
   .run(function($rootScope, $http) {
     // Here we check to see if a user exists in localStorage and set the default
     // headers with a valid access token.
-    var user = localStorage.getItem('user');
+    var user = JSON.parse(localStorage.getItem('user'));
 
     if(user) {
       $rootScope.user = user;
