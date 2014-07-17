@@ -8,15 +8,12 @@ angular.module('tattlrApp')
     if(url.indexOf('access_token=') !== -1) {
         //var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
 
-      var urlSplit = url.split('=');
-      var tokenSplit = urlSplit[1].split('&');
-
-      var token = tokenSplit[0];
+      var urlSplit = url.split('='),
+          tokenSplit = urlSplit[1].split('&'),
+          token = tokenSplit[0];
 
       AuthService.getUserInfo(token).then(function(result) {
         var user = result.data;
-
-        console.log(user);
 
         if(user.HasRegistered) {
           // get user data and set it to the AuthService
@@ -30,10 +27,8 @@ angular.module('tattlrApp')
           // TODO: replace hard coded Email with user.Email when Colin fixes.
           AuthService.registerExternal(token, {"Email": "philbot5000@gmail.com"}).then(function(result) {
 
-            //console.log(result);
             if(result.status === 200) {
               AuthService.getAuthProviders().then(function(result) {
-                console.log(result.data)
                 var providers = result.data;
 
                 // search Array
@@ -42,9 +37,8 @@ angular.module('tattlrApp')
                 if(index !== -1) {
                   // check to ensure Provider is listed.
                   var providerUrl = providers[index].Url;
-                  console.log(providerUrl);
                   $http.get(providerUrl).then(function(result) {
-                    console.log(result);
+
                   });
 
                 } else {
@@ -64,4 +58,5 @@ angular.module('tattlrApp')
 
       });
     }
+
   });

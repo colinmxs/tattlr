@@ -38,6 +38,7 @@ angular
 
     if(user) {
       $rootScope.user = user;
+
       $http.defaults.headers.common.Authorization = 'Bearer ' + user.accessToken;
     } else {
       console.log('user not found.');
@@ -50,11 +51,16 @@ angular
     return {
         response: function (response) {
             // do something on success
-            console.log(response);
+            console.log(response.status);
             return response;
           },
         responseError: function (response) {
             // do something on error
+            console.log(response.status);
+            if(response.status === 401) {
+              console.log('Login required.');
+            }
+
             return $q.reject(response);
           }
       };
