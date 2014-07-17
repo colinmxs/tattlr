@@ -7,7 +7,7 @@ angular
     'ngRoute',
     'ui.bootstrap'
   ])
-  .config(function ($routeProvider, $locationProvider) {
+  .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -20,12 +20,15 @@ angular
       .when('/signin', {
         templateUrl: 'views/signin.html',
         controller: 'SigninCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
       });
-      // .otherwise({
-      //   redirectTo: '/'
-      // });
 
     $locationProvider.html5Mode(true);
+
+    $httpProvider.interceptors.push('responseCheck');
+
   })
 
   .run(function($rootScope, $http) {
@@ -41,4 +44,18 @@ angular
       $rootScope.user = null;
     }
 
+  })
+
+  .factory('responseCheck', function ($q) {
+    return {
+        response: function (response) {
+            // do something on success
+            console.log(response);
+            return response;
+          },
+        responseError: function (response) {
+            // do something on error
+            return $q.reject(response);
+          }
+      };
   });
