@@ -60,7 +60,7 @@ namespace tattlr.services.Controllers
 
             return new UserInfoViewModel
             {
-                Name = User.Identity.GetUserName,
+                Name = User.Identity.GetUserName(),
                 Email = externalLogin.Email,
                 HasRegistered = externalLogin == null,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
