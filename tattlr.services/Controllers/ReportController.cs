@@ -43,11 +43,6 @@ namespace tattlr.services.Controllers
         //// POST: api/Report
         public async Task<SubmittedReportViewModel> Post(ReportSubmissionViewModel entity)
         {
-            if (!Request.Content.IsMimeMultipartContent())
-            {
-                throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
-            }
-            
             var report = ReportSubmissionViewModel.MapToReport(entity);
             return SubmittedReportViewModel.MapFromReport(_reportService.SaveReport(report));
         }
