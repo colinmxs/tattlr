@@ -43,7 +43,7 @@ angular.module('tattlrApp')
                   // });
 
                   console.log(providerUrl);
-                  $location.url(providerUrl);
+                  $location.path(providerUrl);
 
                 } else {
                   console.log('Error: Something is not right. Provider not found.');
