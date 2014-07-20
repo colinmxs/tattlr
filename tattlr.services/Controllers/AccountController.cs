@@ -61,7 +61,6 @@ namespace tattlr.services.Controllers
             return new UserInfoViewModel
             {
                 Name = User.Identity.GetUserName(),
-                Email = externalLogin.Email,
                 HasRegistered = externalLogin == null,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
@@ -425,7 +424,6 @@ namespace tattlr.services.Controllers
             public string LoginProvider { get; set; }
             public string ProviderKey { get; set; }
             public string UserName { get; set; }
-            public string Email { get; set; }
 
             public IList<Claim> GetClaims()
             {
@@ -435,7 +433,6 @@ namespace tattlr.services.Controllers
                 if (UserName != null)
                 {
                     claims.Add(new Claim(ClaimTypes.Name, UserName, null, LoginProvider));
-                    claims.Add(new Claim(ClaimTypes.Email, Email, null, LoginProvider));
                 }
 
                 return claims;
@@ -465,8 +462,7 @@ namespace tattlr.services.Controllers
                 {
                     LoginProvider = providerKeyClaim.Issuer,
                     ProviderKey = providerKeyClaim.Value,
-                    UserName = identity.FindFirstValue(ClaimTypes.Name),
-                    Email = identity.FindFirstValue(ClaimTypes.Email)
+                    UserName = identity.FindFirstValue(ClaimTypes.Name)
                 };
             }
         }
