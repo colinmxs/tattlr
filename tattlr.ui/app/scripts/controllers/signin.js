@@ -25,9 +25,10 @@ angular.module('tattlrApp')
         } else {
           // User needs to register in our DB
           // TODO: replace hard coded Email with user.Email when Colin fixes.
-          AuthService.registerExternal(token, {"Email": "philbot5000@gmail.com"}).then(function(result) {
+          AuthService.registerExternal(token, {"Email": "philbot4000@gmail.com"}).then(function(result) {
 
             if(result.status === 200) {
+
               AuthService.getAuthProviders().then(function(result) {
                 var providers = result.data;
 
@@ -37,9 +38,10 @@ angular.module('tattlrApp')
                 if(index !== -1) {
                   // check to ensure Provider is listed.
                   var providerUrl = providers[index].Url;
-                  $http.get(providerUrl).then(function(result) {
-
-                  });
+                  // $http.get(providerUrl).then(function(result) {
+                  //   console.log(result);
+                  // });
+                  $location.url(providerUrl);
 
                 } else {
                   console.log('Error: Something is not right. Provider not found.');
