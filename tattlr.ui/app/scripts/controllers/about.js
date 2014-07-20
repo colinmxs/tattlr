@@ -1,10 +1,18 @@
 'use strict';
 
 angular.module('tattlrApp')
-  .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('AboutCtrl', function ($scope, ViolationService) {
+
+    $scope.loadingViolations = ViolationService.getViolations().then(function(response) {
+      $scope.violations = response.data;
+
+    });
+
+    $scope.viewViolation = function (violation) {
+
+      //ViolationDetailService.setViolation(violation);
+      //$location.path('violationDetail');
+
+    };
+
   });

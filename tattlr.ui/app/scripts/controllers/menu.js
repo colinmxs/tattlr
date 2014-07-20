@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tattlrApp')
-  .controller('MenuCtrl', function ($rootScope, $scope, $modal) {
+  .controller('MenuCtrl', function ($rootScope, $scope, $modal, $location, $http, AuthService) {
 
     //console.log($rootScope.user);
     // since this controller might be init'd before $rootScope.user has a value
@@ -10,7 +10,7 @@ angular.module('tattlrApp')
     $scope.userMenu = {
       isopen: false
     };
-    
+
     $rootScope.$watch('user',function(){
       console.log($rootScope.user);
 
@@ -28,4 +28,13 @@ angular.module('tattlrApp')
         controller: 'LoginCtrl'
       });
     };
+
+    $scope.logOut = function() {
+      localStorage.clear();
+      $rootScope.user = null;
+      AuthService.setAuthHeader('');
+      $location.path('/');
+
+    };
+
   });

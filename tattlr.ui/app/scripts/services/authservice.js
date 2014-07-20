@@ -3,30 +3,6 @@
 angular.module('tattlrApp')
   .factory('AuthService', function ($http) {
 
-    // var url = event.url;
-    //
-    // if(url.indexOf('access_token=') !== -1) {
-    //     //var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
-    //     //alert (hash);
-    //
-    //     var urlSplit = url.split('=');
-    //     var tokenSplit = urlSplit[1].split('&');
-    //
-    //     var token = tokenSplit[0];
-    //
-    //     localStorage.setItem('tattlrToken', token);
-    //
-    //     console.log(token);
-    //
-    //     var violationForm = Ext.create('Tattlr.view.ViolationForm');
-    //
-    //
-    //     main.setActiveItem(violationForm);
-    //
-    //     ref.close();
-    //
-    // }
-
     var baseUrl = 'http://tattlr.azurewebsites.net';
 
     var user = {
@@ -56,7 +32,12 @@ angular.module('tattlrApp')
         user.email = userValues.Email;
         user.provider = userValues.LoginProvider;
 
+        this.setAuthHeader(accessToken);
+
         return this.getUser();
+      },
+      setAuthHeader: function(accessToken) {
+        $http.defaults.headers.common.Authorization = 'Bearer ' + accessToken;
       }
     };
   });

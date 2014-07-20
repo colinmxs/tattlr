@@ -1,1 +1,3 @@
-<p>This is the about view.</p>
+<div class="list-group">
+  <a href="" ng-repeat="violation in violations" class="list-group-item" ng-click="viewViolation(violation)">{{violation.TimeStamp | date: 'MM-dd'}}: {{violation.Description}}</a>
+</div>
