@@ -3,7 +3,7 @@ namespace tattlr.data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class kk : DbMigration
+    public partial class tattlrv103 : DbMigration
     {
         public override void Up()
         {

@@ -215,6 +215,7 @@
     <Content Include="index.html" />
     <Content Include="robots.txt" />
     <Content Include="scripts\30842f17.scripts.js" />
+    <Content Include="scripts\66d65fe6.scripts.js" />
     <Content Include="scripts\7e1faab4.scripts.js" />
     <Content Include="scripts\92ae4bce.vendor.js" />
     <Content Include="scripts\scripts.js" />
