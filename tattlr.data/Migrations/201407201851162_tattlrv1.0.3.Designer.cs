@@ -7,13 +7,13 @@ namespace tattlr.data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Colin2 : IMigrationMetadata
+    public sealed partial class tattlrv103 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Colin2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(tattlrv103));
         
         string IMigrationMetadata.Id
         {
-            get { return "201406160412561_Colin2"; }
+            get { return "201407201851162_tattlrv1.0.3"; }
         }
         
         string IMigrationMetadata.Source

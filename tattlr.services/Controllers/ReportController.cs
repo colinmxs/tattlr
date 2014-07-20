@@ -8,7 +8,6 @@ using tattlr.services.Models.ViewModels;
 
 namespace tattlr.services.Controllers
 {
-    [Authorize]
     public class ReportController : ApiController
     {
         private readonly IReportService _reportService;
@@ -21,12 +20,16 @@ namespace tattlr.services.Controllers
         public IEnumerable<SubmittedReportViewModel> Get()
         {
             var records = _reportService.GetReports();
-            var reportViewModels = new List<SubmittedReportViewModel>();
-            foreach (var record in records)
+            if (records != null)
             {
-                reportViewModels.Add(SubmittedReportViewModel.MapFromReport(record));
+                var reportViewModels = new List<SubmittedReportViewModel>();
+                foreach (var record in records)
+                {
+                    reportViewModels.Add(SubmittedReportViewModel.MapFromReport(record));
+                }
+                return reportViewModels;
             }
-            return reportViewModels;
+            return null;
         }
 
         // GET: api/Report/5

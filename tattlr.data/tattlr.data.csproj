@@ -75,21 +75,9 @@
     <Compile Include="Azure\AzureBlobStorageContext.cs" />
     <Compile Include="EF\ContextLoader.cs" />
     <Compile Include="EF\Tattlr.cs" />
-    <Compile Include="Migrations\201406160128409_Colin.cs" />
-    <Compile Include="Migrations\201406160128409_Colin.Designer.cs">
-      <DependentUpon>201406160128409_Colin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201406160228589_Colin1.cs" />
-    <Compile Include="Migrations\201406160228589_Colin1.Designer.cs">
-      <DependentUpon>201406160228589_Colin1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201406160412561_Colin2.cs" />
-    <Compile Include="Migrations\201406160412561_Colin2.Designer.cs">
-      <DependentUpon>201406160412561_Colin2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201406192348113_kk.cs" />
-    <Compile Include="Migrations\201406192348113_kk.Designer.cs">
-      <DependentUpon>201406192348113_kk.cs</DependentUpon>
+    <Compile Include="Migrations\201407201851162_tattlrv1.0.3.cs" />
+    <Compile Include="Migrations\201407201851162_tattlrv1.0.3.Designer.cs">
+      <DependentUpon>201407201851162_tattlrv1.0.3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,21 +98,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201406160128409_Colin.resx">
-      <DependentUpon>201406160128409_Colin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201406160228589_Colin1.resx">
-      <DependentUpon>201406160228589_Colin1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201406160412561_Colin2.resx">
-      <DependentUpon>201406160412561_Colin2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201406192348113_kk.resx">
-      <DependentUpon>201406192348113_kk.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <EmbeddedResource Include="Migrations\201407201851162_tattlrv1.0.3.resx">
+      <DependentUpon>201407201851162_tattlrv1.0.3.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

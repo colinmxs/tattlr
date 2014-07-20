@@ -45,19 +45,14 @@
     <Content Include="dist\images\47b431ed.yeoman.png" />
     <Content Include="dist\index.html" />
     <Content Include="dist\robots.txt" />
-    <Content Include="dist\scripts\1f8013b2.scripts.js" />
-    <Content Include="dist\scripts\2c4917fd.scripts.js" />
-    <Content Include="dist\scripts\6662200f.vendor.js" />
-    <Content Include="dist\scripts\7e1faab4.scripts.js" />
-    <Content Include="dist\scripts\scripts.js" />
+    <Content Include="dist\scripts\66d65fe6.scripts.js" />
     <Content Include="dist\scripts\92ae4bce.vendor.js" />
-    <Content Include="dist\scripts\d2872031.scripts.js" />
-    <Content Include="dist\scripts\e1ff1bc5.scripts.js" />
-    <Content Include="dist\styles\5a3706b1.main.css" />
     <Content Include="dist\styles\cd367326.vendor.css" />
+    <Content Include="dist\styles\e90f48ae.main.css" />
     <Content Include="dist\views\about.html" />
     <Content Include="dist\views\login.html" />
     <Content Include="dist\views\main.html" />
+    <Content Include="dist\views\navigation.html" />
     <Content Include="dist\views\signin.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
