@@ -41,6 +41,8 @@ angular.module('tattlrApp')
                   // $http.get(providerUrl).then(function(result) {
                   //   console.log(result);
                   // });
+
+                  console.log(providerUrl);
                   $location.url(providerUrl);
 
                 } else {
