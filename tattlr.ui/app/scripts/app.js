@@ -20,10 +20,10 @@ angular
       .when('/signin', {
         templateUrl: 'views/signin.html',
         controller: 'SigninCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
+      // .otherwise({
+      //   redirectTo: '/'
+      // });
 
     $locationProvider.html5Mode(true);
 

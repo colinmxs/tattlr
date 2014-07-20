@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tattlrApp')
-  .controller('SigninCtrl', function ($rootScope, $scope, $location, AuthService, $http) {
+  .controller('SigninCtrl', function ($window, $rootScope, $scope, $location, AuthService, $http) {
 
     var url = $location.url();
 
@@ -14,6 +14,7 @@ angular.module('tattlrApp')
 
       AuthService.getUserInfo(token).then(function(result) {
         var user = result.data;
+        console.log(user);
 
         if(user.HasRegistered) {
           // get user data and set it to the AuthService
@@ -43,7 +44,8 @@ angular.module('tattlrApp')
                   // });
 
                   console.log(providerUrl);
-                  $location.url(providerUrl);
+                  //$location.path(providerUrl);
+                  window.location = 'http://tattlr.azurewebsites.net'+ providerUrl;
 
                 } else {
                   console.log('Error: Something is not right. Provider not found.');
